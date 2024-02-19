@@ -4,7 +4,7 @@
 
 This project serves as a demo project to facilitate learning RISC-V assembly.
 
-This project will be compiled as a riscv63-linux-gnu ELF executable, which will be run by the qemu-riscv64-static, aka. QEMU User Space Emulator.
+This project will be compiled as a riscv64-linux-gnu ELF executable, which will be run by the qemu-riscv64-static, aka. QEMU User Space Emulator.
 
 == Directory Structure
 ----
