@@ -13,16 +13,16 @@ OBJ = $(shell find $(SRC_DIR) -name '*.c' -or -name '*.S' | sed -r -e 's#.*\/(.*
 $(TARGET): $(OBJ)
 	riscv64-linux-gnu-gcc $(LDFLAGS) -o $@ $^
 
-$(OBJ_DIR)/%.S.o:	$(OBJ_DIR) $(SRC_DIR)/%.S
-	riscv64-linux-gnu-as $(ASFLAGS) -o $@ $(word 2,$^)
+$(OBJ_DIR)/%.S.o:	$(SRC_DIR)/%.S
+	riscv64-linux-gnu-as $(ASFLAGS) -o $@ $<
 
-$(OBJ_DIR)/%.c.o:	$(OBJ_DIR) $(SRC_DIR)/%.c
-	riscv64-linux-gnu-gcc $(CFLAGS) -c -o $@ $(word 2,$^)
+$(OBJ_DIR)/%.c.o:	$(SRC_DIR)/%.c
+	riscv64-linux-gnu-gcc $(CFLAGS) -c -o $@ $<
 
 all:	clean $(TARGET)
 
 clean:
-	rm -rf build
+	rm $(OBJ) $(TARGET)
 
 run:	$(TARGET)
 	@qemu-riscv64-static -L /usr/riscv64-linux-gnu/ $<
@@ -35,5 +35,3 @@ debug: $(TARGET)
 	@echo "inside gdb:"
 	@echo "  target remote localhost:1234"
 
-$(OBJ_DIR):
-	mkdir -p $@
