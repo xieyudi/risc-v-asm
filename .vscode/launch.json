@@ -1,0 +1,16 @@
+{
+  "configurations": [
+    
+    {
+      "name": "Launch QEMU",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/main.elf",
+      "cwd": "${workspaceFolder}",
+      "miDebuggerPath": "/usr/bin/riscv64-linux-gnu-gdb",
+      "miDebuggerServerAddress": "localhost:1234",
+      "stopAtEntry": true,
+      "preLaunchTask": "qemu",
+    }
+  ]
+}

@@ -24,8 +24,8 @@ all:	clean $(TARGET)
 clean:
 	rm -f build/*
 
-run:	$(OBJ_DIR)/$(TARGET)
-	qemu-riscv64-static -L /usr/riscv64-linux-gnu/ $<
+run:	$(TARGET)
+	@qemu-riscv64-static -L /usr/riscv64-linux-gnu/ $<
 
 debug: $(TARGET)
 	@echo "to debug interactively:"
