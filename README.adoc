@@ -4,7 +4,7 @@
 
 This project serves as a demo project to facilitate learning RISC-V assembly.
 
-This project will be compiled as a riscv64-linux-gnu ELF executable, which will be run by the qemu-riscv64-static (link:https://www.qemu.org/docs/master/user/main.html[QEMU User Space Emulator])
+This project will be compiled as a riscv63-linux-gnu ELF executable, which will be run by the qemu-riscv64-static, aka. QEMU User Space Emulator.
 
 == Directory Structure
 ----
@@ -41,3 +41,4 @@ README.adoc   This document
 . link:https://ftp.gnu.org/old-gnu/Manuals/gas-2.9.1/html_chapter/as_7.html[GNU AS Assembler Directives]
 . link:https://github.com/riscv/riscv-isa-manual/releases/download/riscv-isa-release-056b6ff-2023-10-02/unpriv-isa-asciidoc.html[The RISC-V Instruction Set Manual Volume I: Unprivileged Architecture]
 . link:https://github.com/riscv-non-isa/riscv-asm-manual/blob/master/riscv-asm.md[RISC-V Assembly Programmer's Manual]
+. link:https://www.qemu.org/docs/master/user/main.html[QEMU User Space Emulator]
